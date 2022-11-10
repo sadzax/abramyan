@@ -1,20 +1,11 @@
 # Дано трехзначное число. Проверить истинность высказывания:
 # «Цифры данного числа образуют возрастающую или убывающую после-
 # довательность».
-# ЗАДАНИЕ ПЕРЕРАБОТАНО: дано целое число
+# ЗАДАНИЕ ПЕРЕРАБОТАНО: дано целое число, нужно взять все его цифры и выложить 
+# отсортированным списком. Например, 15486 = 1 4 5 6 8
 
 import sadzax
 # num = sadzax.input_int("a = ","error",1,None,None)
-
-def look_for_orders_in_number(dgt, counter):
-    dgt = dgt // 10
-    if dgt < 0:
-        return counter
-    else:
-        return counter
-        counter += 1
-        look_for_orders_in_number(dgt//10, counter)
-    
 
 def check(i):
     if (i // 10) < 10:
@@ -23,4 +14,15 @@ def check(i):
     else:
         return False
 
-print(look_for_orders_in_number(5000, 0))
+def func(d, c, l):
+    d = abs(d)
+    l = list(l)
+    if d <= 0:
+        print(l)
+        print(type(l))
+        return
+    else:
+        l.append(int(d % 10))
+        func(d // 10, c + 1, l)
+
+func(15486, 0, [])
