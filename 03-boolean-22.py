@@ -19,10 +19,23 @@ def func(d, c, l):
     l = list(l)
     if d <= 0:
         print(l)
-        print(type(l))
         return
     else:
         l.append(int(d % 10))
         func(d // 10, c + 1, l)
 
-func(15486, 0, [])
+func (1898755698, 0, [])
+
+print(len(str(5671)))
+
+def func2(s, c):
+    s = str(s)
+    if len(s) < 2 or c == 0:
+        return
+    else:
+        s = sadzax.Trimmer.left(s, len(s)-c)
+        print(s)
+        func2(s, c)
+
+func2 ('Marat Ramazanov', 1)
+
