@@ -9,9 +9,9 @@ import math
 
 error = "Please enter only digits"
 while True:
-    a = sadzax.input_float(f"Enter A: ",error,None,None,0)
-    b = sadzax.input_float(f"Enter B: ",error,None,None,None)
-    c = sadzax.input_float(f"Enter C: ",error,None,None,None)
+    a = sadzax.Enter.float(f"Enter A: ",error,None,None,0)
+    b = sadzax.Enter.float(f"Enter B: ",error,None,None,None)
+    c = sadzax.Enter.float(f"Enter C: ",error,None,None,None)
     disc = (b ** 2) - (4 * a * c)
     if disc < 0:
         print('discriminant must be positive, try again')
