@@ -67,24 +67,22 @@ class Enter(object):
                 print(arg_error)
                 continue
 
-class Digits_trainings
+class Digits_trainings(object):
     def find_number_of_digits(dgt, counter):
         dgt = abs(dgt)
         if dgt <= 0:
-            print(counter)
-            return
+            return counter
         else:
-            find_number_of_digits(dgt//10, counter + 1)
+            return Digits_trainings.find_number_of_digits(dgt//10, counter + 1)
 
-    def find_digits_and_print_them_out(d, c, l):
-        d = abs(d)
-        l = list(l)
-        if d <= 0:
-            print(l)
-            return
+    def find_digits_and_print_them_out(dgt, counter, lst):
+        dgt = abs(int(dgt))
+        lst = list(lst)
+        if dgt <= 0:
+            return lst
         else:
-            l.append(int(d % 10))
-            func(d // 10, c + 1, l)
+            lst.append(int(dgt % 10))
+            return Digits_trainings.find_digits_and_print_them_out(dgt // 10, counter + 1, lst)
 
 class Trimmer(object):
     def left(string, amount):
