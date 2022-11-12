@@ -1,36 +1,4 @@
 class Enter(object):
-    def arg_min_f(i, arg):
-        if arg is not None:
-            if i < arg:
-                return False
-        else:
-            return True
-
-    def arg_max_f(i, arg):
-        if arg is not None:
-            if i > arg:
-                return False
-        else:
-            return True
-
-    def arg_isnt_f(i, arg):
-        if arg is not None:
-            if i == arg or arg is True:
-                return False
-        else:
-            return True
-
-    def arg_isnt_in_list_f(i, arg):
-        if arg is not None:
-            if isinstance(arg, (list, tuple)):
-                for el in arg:
-                    if el == i:
-                        return False
-            elif i == arg or arg is True:
-                return False
-        else:
-            return True
-    
     def int(input_descripton, arg_error, arg_min, arg_max, arg_isnt):
         while True:
             try:
@@ -66,6 +34,37 @@ class Enter(object):
             except:
                 print(arg_error)
                 continue
+    def arg_min_f(i, arg):
+        if arg is not None:
+            if i < arg:
+                return False
+        else:
+            return True
+
+    def arg_max_f(i, arg):
+        if arg is not None:
+            if i > arg:
+                return False
+        else:
+            return True
+
+    def arg_isnt_f(i, arg):
+        if arg is not None:
+            if i == arg or arg is True:
+                return False
+        else:
+            return True
+
+    def arg_isnt_in_list_f(i, arg):
+        if arg is not None:
+            if isinstance(arg, (list, tuple)):
+                for el in arg:
+                    if el == i:
+                        return False
+            elif i == arg or arg is True:
+                return False
+        else:
+            return True
 
 class Digits_operator(object):
     def find_number_of_digits(dgt):
